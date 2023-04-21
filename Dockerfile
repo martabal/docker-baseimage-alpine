@@ -24,5 +24,3 @@ RUN apk add curl \
     echo "**** cleanup ****" && \
     rm -rf \
     /tmp/*
-
-ENTRYPOINT ["tail", "-f"]

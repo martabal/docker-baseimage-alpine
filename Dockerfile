@@ -9,6 +9,7 @@ RUN apk add curl \
     openssh \
     libpq-dev \
     sqlite \
+    musl-dev \
     build-base \
     coreutils \
     npm \

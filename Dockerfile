@@ -15,7 +15,7 @@ RUN apk add bash \
     nodejs \
     npm \
     openssh \
-    php8 \
+    php \
     py-pip \
     rust \
     sqlite-dev && \

@@ -2,6 +2,8 @@ name: Build and push Docker image
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
 
 
 jobs:
@@ -13,7 +15,13 @@ jobs:
       with:
         ref: 'main'
         fetch-depth: 0
-      
+
+    - name: Release tag
+      id: releasetag
+      run: |
+        now=`date "+%Y.%m"`
+        echo "date=$date" >> $GITHUB_OUTPUT
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2.1.0
 
@@ -35,5 +43,7 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64,linux/arm64
         push: ${{ github.event_name != 'pull_request' }}
-        tags: martabal/alpine:latest
+        tags: |
+          martabal/alpine:latest
+          martabal/alpine:${{ steps.releasetag.outputs.date }}
 

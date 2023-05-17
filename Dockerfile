@@ -5,7 +5,7 @@ LABEL maintainer="martabal"
 RUN apk add bash \
     build-base \
     cargo \
-    composer
+    composer \
     coreutils \
     curl \
     gcc \

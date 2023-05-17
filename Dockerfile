@@ -1,28 +1,31 @@
-FROM alpine:3.16 as rootfs-stage
+FROM alpine:3.18
 
-ENV ARCH=x86_64
 LABEL maintainer="martabal"
 
-RUN apk add curl \
+RUN apk add bash \
+    build-base \
+    cargo \
+    composer
+    coreutils \
+    curl \
     gcc \
     jq \
-    openssh \
     libpq-dev \
-    sqlite-dev \
     musl-dev \
-    build-base \
-    coreutils \
-    npm \
-    rust \
-    cargo \
-    py-pip \
     nodejs \
-    bash && \
+    npm \
+    openssh \
+    php8
+    py-pip \
+    rust \
+    sqlite-dev && \
     echo "**** make folders ****" && \
     mkdir -p \
-    /app \
-    /config \
-    /defaults && \
+      /app \
+      /config \
+      /defaults && \
     echo "**** cleanup ****" && \
     rm -rf \
-    /tmp/*
+      /tmp/* \
+      /root/.cache \
+      /root/.npm

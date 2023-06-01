@@ -2,7 +2,9 @@ FROM alpine:3.18
 
 LABEL maintainer="martabal"
 
-RUN apk add bash \
+RUN \
+  apk add \
+    bash \
     build-base \
     cargo \
     composer \
@@ -19,13 +21,8 @@ RUN apk add bash \
     py-pip \
     rust \
     sqlite-dev && \
-    echo "**** make folders ****" && \
-    mkdir -p \
-      /app \
-      /config \
-      /defaults && \
-    echo "**** cleanup ****" && \
-    rm -rf \
-      /tmp/* \
-      /root/.cache \
-      /root/.npm
+  echo "**** cleanup ****" && \
+  rm -rf \
+    /tmp/* \
+    /root/.cache \
+    /root/.npm

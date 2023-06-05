@@ -19,6 +19,7 @@ RUN \
     openssh \
     php \
     py3-pip \
+    python3 \
     rust \
     sqlite-dev && \
   echo "**** cleanup ****" && \

@@ -18,7 +18,7 @@ RUN \
     npm \
     openssh \
     php \
-    py-pip \
+    py3-pip \
     rust \
     sqlite-dev && \
   echo "**** cleanup ****" && \

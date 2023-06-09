@@ -21,6 +21,7 @@ RUN \
     py3-pip \
     python3 \
     rust \
+    rustfmt \
     sqlite-dev && \
   echo "**** cleanup ****" && \
   rm -rf \

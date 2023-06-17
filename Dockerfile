@@ -11,6 +11,7 @@ RUN \
     coreutils \
     curl \
     gcc \
+    git \
     jq \
     libpq-dev \
     musl-dev \

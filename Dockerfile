@@ -18,7 +18,7 @@ RUN \
     nodejs \
     npm \
     openssh \
-    php \
+    php-tokenizer \
     py3-pip \
     python3 \
     rust \

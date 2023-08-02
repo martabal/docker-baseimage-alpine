@@ -19,11 +19,14 @@ RUN \
     npm \
     openssh \
     php-tokenizer \
+    poetry \
     py3-pip \
     python3 \
     rust \
     rustfmt \
-    sqlite-dev && \
+    sqlite-dev \
+    vips \
+    vips-cpp && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/* \

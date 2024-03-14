@@ -2,9 +2,9 @@ name: Build
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: 'main'
+          ref: "main"
           fetch-depth: 0
 
       - name: Set up QEMU
@@ -22,11 +22,11 @@ jobs:
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v3.0.0
+        uses: docker/setup-buildx-action@v3.1.0
 
       - name: Build Docker
         uses: docker/build-push-action@v5.2.0
         with:
           context: ./
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
